@@ -28,93 +28,72 @@ body {
   color: $primaryFontColor;
 }
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 p {
   font-weight: 500;
   line-height: 1.6;
 }
 
-header {
-  padding: 6px 24px;
-  position: fixed;
-  width: 100%;
-  transition: all .5s ease;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    width: 56px;
-  }
-
-  .nav-list {
-    a {
-      color: $primaryColor;
-      margin: 6px;
-      font-weight: 500;
-      font-size: 14px;
-      padding: 8px 16px;
-      transition: all 0.5s ease;
-      box-sizing: border-box;
-      position: relative;
-
-      &:hover:before {
-        width: 100%;
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        background: $primaryColor;
-        width: 0;
-        height: 1px;
-        left: 0;
-        bottom: 0;
-        transition: all .3s ease;
-      }
-    }
-  }
-
-  .nav-link-active {
-    background-color: $primaryColor;
-    color: $white!important;
-    box-shadow: $boxShadow;
-    border-radius: 4px;
-
-    &:before {
-      display: none;
-    }
-  }
-
-  .ham-icon {
-    display: none;
-  }
-}
-
-.header-active {
-  background: #ffffff80;
-  backdrop-filter: blur(12px);
-  z-index: 1;
-  box-shadow: 0 0 29px 0 #86868640;
-}
-
-section {
+.home {
+  text-align: center;
   height: 100vh;
-}
-
-.home,
-.contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  overflow: hidden;
+
+  .left, .right {
+    flex: 1;
+    height: 100%;
+  }
+
+  .left {
+    img {
+      object-position: top!important;
+    }
+  }
+
+  .right {
+    .social-icons {
+      padding: 12px;
+      a {
+        margin: 12px;
+        svg {
+          font-size: 32px;
+        }
+      }
+      .linkedin {
+        color: #0A66C2;
+      }
+      .github {
+        color: #1B1F23;
+      }
+      .codepen {
+        color: #000000;
+      }
+      .twitter {
+        color: #1da1f2;
+      }
+    }
+  }
+
+  .hero-img {
+    height: 100%;
+  }
+
+  .greeting {
+    font-size: 32px;
+    padding: 12px 0;
+  }
+  .name {
+    font-size: 64px;
+    color: $primaryColor;
+    font-weight: 600;
+    line-height: unset;
+  }
+  .description {
+    font-size: 24px;
+    padding: 12px 0;
+  }
 }
 
 .content {
@@ -124,103 +103,6 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-
-.home {
-  text-align: center;
-  .greeting {
-    font-size: 32px;
-  }
-  .name {
-    font-size: 64px;
-    color: $primaryColor;
-    font-weight: 600;
-  }
-  .description {
-    font-size: 24px;
-  }
-  /*.hand-emoji {
-    animation: wave-hand 2s infinite;
-    display: inline-block;
-    transform-origin: center;
-  }*/
-
-  &:before {
-    content: "";
-    position: absolute;
-  }
-}
-
-.about {
-  //background: $primaryColor;
-}
-
-@keyframes wave-hand {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(40deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.contact {
-  .heading {
-    font-size: 48px;
-    font-weight: bold;
-    color: $primaryColor;
-  }
-  .content-box {
-    max-width: 600px;
-    font-weight: 500;
-    text-align: center;
-    padding: 12px;
-    margin: 0 auto;
-  }
-}
-
-.say-hello-btn {
-  padding: 10px 30px;
-  margin-top: 24px;
-  font-weight: 600;
-  color: $white;
-  background-color: $primaryColor;
-  box-shadow: $boxShadow;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  position: relative;
-  top: 0;
-  left: 0;
-  outline: none;
-  border: none;
-  font-family: $fontFamily;
-  cursor: pointer;
-  text-transform: uppercase;
-
-  &:hover {
-    box-shadow: $boxShadow, 0 10px 20px #ccc;
-    top: -4px;
-    left: -4px;
-  }
-}
-
-.hero-btn-float {
-  height: 120px;
-  position: relative;
-  padding: 24px;
-  box-sizing: border-box;
-}
-
-.hero-btn-wrapper {
-  position: absolute;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 .lets-talk-btn {
@@ -234,45 +116,13 @@ section {
   border: none;
   font-family: $fontFamily;
   cursor: pointer;
-  position: absolute;
-  width: 160px;
-  left: calc(50% - 80px);
-  bottom: calc(100vh - 48px);
+  margin: 12px auto;
   font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
 
   &:hover {
     box-shadow: $boxShadow, 0 10px 20px #ccc;
-  }
-  .talk-text {
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .mail-icon {
-    display: none;
-  }
-}
-
-.lets-talk-fab {
-  position: fixed;
-  left: calc(100% - 76px);
-  bottom: 20px;
-  transition: all 0.5s ease;
-  width: 56px;
-  height: 56px;
-  border-radius: 100%;
-  padding: 0;
-
-  .talk-text {
-    display: none;
-  }
-
-  .mail-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    height: 100%;
   }
 }
 

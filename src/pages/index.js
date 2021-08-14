@@ -1,23 +1,13 @@
 import * as React from "react";
 import "../css/style.scss";
-import Header from "../components/Header";
-import Home from './Home'
-import About from "./About";
-import Work from "./Work";
-import Contact from "./Contact";
+import Home from "./Home";
+import MetaTags from "../components/MetaTags";
 
 const IndexPage = () => {
   return (
     <>
-      <Header/>
-      <main>
-        <div className="container">
-          <Home/>
-          <About/>
-          <Work/>
-          <Contact/>
-        </div>
-      </main>
+      <MetaTags />
+      <Home />
     </>
   );
 };
