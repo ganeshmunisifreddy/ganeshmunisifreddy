@@ -3,15 +3,21 @@
     flex-direction: column;
     height: auto;
 
-    .left {
-      min-height: 300px;
+    .hero {
+      min-height: 50vh;
       display: flex;
       align-items: center;
-      .hero-img {
-        width: 240px;
-        height: 240px;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+
+      .heroImg {
+        position: relative !important;
+        max-width: 240px;
+        max-height: 240px;
         border-radius: 100%;
         margin: 24px;
+        object-fit: cover;
       }
     }
 
@@ -23,9 +29,11 @@
       font-size: 24px;
       padding: 6px 0;
     }
+
     .name {
       font-size: 32px;
     }
+
     .description {
       font-size: 16px;
       padding: 6px 0;

@@ -1,37 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
-
-$fontFamily: "Montserrat", sans-serif;
-$backgroundColorDark: #0b0d15;
-$backgroundColorLight: #fbfbfb;
-$primaryColor: #754ef9;
-$primaryFontColor: #333333;
-$white: #ffffff;
-$black: #000000;
-$boxShadow: 0 10px 30px rgb(134 134 134 / 65%);
-
-* {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  font-weight: 400;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: $fontFamily;
-  background-color: $backgroundColorLight;
-  min-height: 100vh;
-  color: $primaryFontColor;
-}
-
-p {
-  font-weight: 500;
-  line-height: 1.6;
-}
+@import "variables";
 
 .home {
   text-align: center;
@@ -41,55 +9,68 @@ p {
   align-items: center;
   overflow: hidden;
 
-  .left, .right {
+  .hero,
+  .right {
     flex: 1;
     height: 100%;
   }
 
-  .left {
-    img {
-      object-position: top!important;
-    }
+  .hero {
+    position: relative;
   }
 
   .right {
-    .social-icons {
+    .socialIcons {
       padding: 12px;
+
       a {
         margin: 12px;
+
         svg {
           font-size: 32px;
+
+          @include color-scheme(dark) {
+            color: $lightColor !important;
+          }
         }
       }
+
       .linkedin {
         color: #0A66C2;
       }
+
       .github {
         color: #1B1F23;
       }
+
       .codepen {
         color: #000000;
       }
+
       .twitter {
         color: #1da1f2;
       }
     }
   }
 
-  .hero-img {
+  .heroImg {
     height: 100%;
+    object-position: top;
+    object-fit: cover;
   }
 
   .greeting {
     font-size: 32px;
     padding: 12px 0;
   }
+
   .name {
     font-size: 64px;
     color: $primaryColor;
     font-weight: 600;
     line-height: unset;
   }
+
   .description {
     font-size: 24px;
     padding: 12px 0;
@@ -105,12 +86,12 @@ p {
   flex-direction: column;
 }
 
-.lets-talk-btn {
+.letsTalkBtn {
   padding: 10px 30px;
-  color: $white;
+  color: $lightColor;
   background-color: $primaryColor;
-  box-shadow: $boxShadow;
-  border-radius: 4px;
+  box-shadow: $boxShadowLight;
+  border-radius: 32px;
   transition: all 0.5s ease;
   outline: none;
   border: none;
@@ -121,8 +102,12 @@ p {
   font-weight: 500;
   text-transform: uppercase;
 
+  @include color-scheme(dark) {
+    box-shadow: $boxShadowDark;
+  }
+
   &:hover {
-    box-shadow: $boxShadow, 0 10px 20px #ccc;
+    transform: scale(1.1);
   }
 }
 
