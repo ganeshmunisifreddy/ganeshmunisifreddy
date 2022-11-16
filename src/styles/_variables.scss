@@ -1,0 +1,13 @@
+@mixin color-scheme($value: light) {
+  @media (prefers-color-scheme: $value) {
+    @content;
+  }
+}
+
+$fontFamily: "Montserrat", sans-serif;
+$primaryColor: #754ef9;
+$primaryFontColor: #333333;
+$lightColor: #fbfbfb;
+$darkColor: #303030;
+$boxShadowLight: 0 10px 30px rgb(134 134 134 / 65%);
+$boxShadowDark: 0 10px 30px rgb(46 37 79 / 42%);
